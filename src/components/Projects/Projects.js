@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 const Projects = ({ projects }) => {
   return (
     <section id="projects" className="section projects-section">
-      <div className="container">
-        <h2 className="section-heading">Projects Showcase</h2>
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
+
+      <div className='text-center'>
+        <h2 className="project-heading">Projects Showcase</h2>
         </div>
+      <div className="projects-container">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
+
+      
       </div>
     </section>
   );
@@ -33,9 +36,9 @@ const ProjectCard = ({ project }) => {
       <img src={project.image} alt={project.title} className="project-image" />
       <div className="project-details">
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
+       <span className='text-container'>{project.description}</span>
         <a href={project.link} target="_blank" rel="noopener noreferrer">
-          Explore Project
+          Explore Project..
         </a>
       </div>
     </div>

@@ -12,25 +12,25 @@ const Header = () => {
         {/* <span className="name"> JAYANT VERMA </span> */}
       {/* </Navbar.Brand> */}
       {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-      {/* <Navbar.Collapse id="basic-navbar-nav"> */}
-       <span >
+      <Navbar.Collapse id="basic-navbar-nav">
+       
         <Nav className="jump-to justify-content-center align-item-center">
-          <NavLink to="introduction">Introduction</NavLink>
-          <NavLink to="skills">Skills</NavLink>
+          <NavLink to="#introduction">Introduction</NavLink>
+          <NavLink to="/#skills">Skills</NavLink>
           <NavLink to="projects">Projects</NavLink>
           <NavLink to="aboutMe">About-Me</NavLink>
-          <NavLink to="workExperince">Introduction</NavLink>
+          <NavLink to="workExperince">WorkExperience</NavLink>
           <NavLink to="contact">Contact</NavLink>
           {/* Add links for other sections with smooth scrolling */}
         </Nav>
-        </span> 
-      {/* </Navbar.Collapse> */}
+        
+      </Navbar.Collapse>
     </Navbar>
   );
 };
 
 const NavLink = ({ to, children }) => (
-  <Link to={to} smooth={true} duration={500} className="nav-link">
+  <Link to={to} component={Link} spy={true} smooth={true} offset={50} duration={500} className="nav-link">
     {children}
   </Link>
 );

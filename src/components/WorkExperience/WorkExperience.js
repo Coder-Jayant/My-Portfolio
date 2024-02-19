@@ -9,7 +9,7 @@ const WorkExperience = ({ experiences }) => {
   };
 
   return (
-    <section id="workExperience" className="section workexperience-section">
+    <section name='workExperience' id="workExperience" className="section workexperience-section">
       <div className="container">
         <h2 className="section-heading">Work Experience</h2>
         <div className="workexperience-content">

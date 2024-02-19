@@ -1,19 +1,39 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGamepad, faCode, faPalette, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faGamepad, faCode, faPalette, faRocket,fabReact } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import mern from '../../Data/react.svg' 
-const skills = [{'title':'MERN', 'icon':mern}]
+import { ExpressLogo,MongoLogo,DjangoLogo, CppLogo, MlIcon, TailwindLogo,JavascriptLogo,MysqlLogo, PostmanLogo } from '../../Data/Icons';
+// import Card from './Card';
 const Skills = ({ skills }) => {
+         
   return (
-  <section id="skills" className="section skills-section">
-      <div className="container text-center">
-        <h2 className="section-heading">Skills Overview</h2>
-        <div className="skills-icons">
+  <section  className="section skills-section">
+      <div id="skills" className=" text-center">
+       <span >  <h2 className="skills-heading">Skills Overview</h2></span>
+        <div className="skills-icons ">
           {skills.map((skill, index) => (
+            <span className="skill-card  card ">
+              <span className='wrapper'>
+              {(skill.title == 'MongoDB') && (<MongoLogo className='icon-2'/>)}
+              {(skill.title == 'Express') && (<ExpressLogo className='icon-2'/>)  }
+              {(skill.title == 'Django') && (<DjangoLogo className='icon-2'/>)}
+              {(skill.title == 'C/C++') && (<CppLogo className='icon-2'/>)  }
+              {(skill.title == 'Javascript') && (<JavascriptLogo className='icon-2'/>) }
+              {(skill.title == 'Tailwind') && (<TailwindLogo className='icon-2'/>) }
+              {(skill.title == 'MySQL') && (<MysqlLogo className='icon-2'/>) }
+              {(skill.title == 'Machine Learning') && (<MlIcon className='icon-2'/>) }
+              {(skill.title == 'Postman') && (<PostmanLogo className='icon-2'/>) }
+           
+            {/* <Icon skill = {skill}/> */}
             <SkillIcon key={index} icon={skill.icon} title={skill.title} />
+            </span>
+            </span>
+            // <Card skill = {skill} index={index} />
+         
+
           ))}
         </div>
+   
       </div>
     </section>
   );
@@ -23,7 +43,7 @@ Skills.propTypes = {
   skills: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      icon: PropTypes.object.isRequired, // FontAwesome icon object
+      icon: PropTypes.object, // FontAwesome icon object
     })
   ).isRequired,
 };
@@ -42,4 +62,12 @@ SkillIcon.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
+
+  
+
 export default Skills;
+
+
+
+
+
